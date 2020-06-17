@@ -17,6 +17,19 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
+// TODO-Routes
+
+app.get('/all', function (req, res) {
+    res.send(projectData);
+});
+
+app.post('/addData', addData);
+
+function addData (req, res) {
+    console.log(req.body);
+    projectData.push(req.body);
+}
+
 
 // Setup Server
 const port = 8000;
