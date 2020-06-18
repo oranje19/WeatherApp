@@ -17,9 +17,9 @@ function callbackAction (e) {
         console.log(data);
         postWeather('/addWeather', {temperature1: data.main.temp, date1: newDate, userResponse1: userResponse});
     })
-    .then (
+    .then ({
         updateUI()
-    )
+    })
 }
 
 const getWeather = async (url, zip, key) => {
